@@ -10,9 +10,9 @@ tags: 重学JavaScript
 ## apply
 
 **apply()** 方法调用一个具有给定 `this` 值的函数，以及作为一个数组（或类似数组对象）提供的参数。
-:::tip 语法
-func.apply(thisArg, [argsArray])
-:::
+
+> tip 语法
+> func.apply(thisArg, [argsArray])
 
 ```js
 var name = 'xgq';
@@ -31,9 +31,9 @@ a.apply(obj, [123, 321]); // obj 123
 ## call
 
 **call()** 方法使用一个指定的 `this` 值和单独给出的一个或多个参数来调用一个函数。
-:::tip 语法
-function.call(thisArg, arg1, arg2, ...)
-:::
+
+> tip 语法
+> function.call(thisArg, arg1, arg2, ...)
 
 ```js
 var name = 'xgq';
@@ -52,9 +52,9 @@ a.call(obj, [123, 321]); // obj [123,321]
 ## bind
 
 **bind()** 方法创建一个新的函数，在 **bind()** 被调用时，这个新函数的 `this` 被指定为 **bind()** 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
-:::tip 语法
-function.bind(thisArg[, arg1[, arg2[, ...]]])
-:::
+
+> tip 语法
+> function.bind(thisArg[, arg1[, arg2[, ...]]])
 
 ```js
 var name = 'xgq';
