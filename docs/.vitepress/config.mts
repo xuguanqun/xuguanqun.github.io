@@ -2,13 +2,13 @@ import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'xgq space',
+  title: 'xgq Space',
   description: 'A Blog',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'frontend-road', link: '/frontend-road/index' },
+      { text: '主页', link: '/' },
+      { text: '前端进阶之路', link: '/frontend-road/index.md' },
     ],
     sidebar: {
       '/html/': [
@@ -31,5 +31,9 @@ export default defineConfig({
       ],
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/xuguanqun' }],
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2024',
+    },
   },
 });
