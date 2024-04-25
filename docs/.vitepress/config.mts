@@ -14,18 +14,25 @@ export default defineConfig({
       '/html/': [
         {
           text: 'html',
-          items: [
-            { text: 'a1', link: '/markdown-examples' },
-            { text: 'a2', link: '/api-examples' },
-          ],
+          items: [],
         },
       ],
       '/css/': [
         {
           text: 'css',
+          items: [],
+        },
+      ],
+      '/js/': [
+        {
+          text: 'javascript',
           items: [
-            { text: 'b1', link: '/markdown-examples' },
-            { text: 'b2', link: '/api-examples' },
+            { text: '介绍', link: '/js/index.md' },
+            { text: '变量声明 var let const', link: '/js/var.md' },
+            { text: '数据类型', link: '/js/type.md' },
+            { text: '字符串', link: '/js/string.md' },
+            { text: '数字', link: '/js/number.md' },
+            { text: '循环遍历', link: '/js/map.md' },
           ],
         },
       ],

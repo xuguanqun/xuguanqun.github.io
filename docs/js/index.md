@@ -1,5 +1,1 @@
----
-layout: doc
----
-
 # javascript

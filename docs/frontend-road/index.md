@@ -3,15 +3,8 @@ layout: home
 
 hero:
   name: '前端进阶之路'
-  text: '从零开始'
-  tagline: 从一而终
-  actions:
-    - theme: brand
-      text: 啊
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+  text: '从零开始 从一而终'
+  tagline: 点击下方卡片进行学习
 
 features:
   - title: HTML
