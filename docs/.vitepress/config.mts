@@ -18,6 +18,7 @@ export default defineConfig({
           items: [
             { text: '介绍', link: '/self-study/index.md' },
             { text: 'HTML', link: '/self-study/html.md' },
+            { text: 'CSS', link: '/self-study/css.md' },
           ],
         },
       ],
@@ -31,6 +32,44 @@ export default defineConfig({
         </svg>`,
         },
         link: 'https://juejin.cn/user/4476867078790382',
+      },
+      {
+        icon: {
+          svg: `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">  <image id="image0" width="32" height="32" x="0" y="0"
+          xlink:href="data:image/png;base64,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" />
+      </svg>
+      `,
+        },
+        link: 'https://www.zhihu.com/people/thisthings',
       },
       {
         icon: {
