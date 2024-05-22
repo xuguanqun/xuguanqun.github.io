@@ -1,3 +1,11 @@
+<style >
+.stackblitz {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+}
+</style>
+
 # HTML
 
 一个最简单的网页就是一个格式为.html 的文件，它可以被浏览器打开。
@@ -6,6 +14,7 @@
 ```html
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>标签名字</title>
   </head>
   <body>
@@ -16,7 +25,11 @@
 
 然后用浏览器去打开它，就会是这个样子。
 
-![html](../../public/20240515214342.png)
+![html](../public/images/20240515214342.png)
+
+在线代码示例
+
+<iframe class="stackblitz" src="https://stackblitz.com/edit/stackblitz-starters-mshorx?embed=1&file=index.html&hideNavigation=1" />
 
 可以看到 `head` 中的 `title` 表示的是标签的名字，而 `body` 里面装的是网站的内容
 这个时候我们就可以在里面写一些东西了，比如说写一篇文章。
@@ -24,6 +37,7 @@
 ```html
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>标签名字</title>
   </head>
   <body>
@@ -38,7 +52,7 @@
 
 ```html
 <html>
-  <head>
+  <head><meta charset="UTF-8" />
     <title>标签名字</title>
   </head>
   <body>
@@ -52,6 +66,7 @@
 ```html
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>标签名字</title>
   </head>
   <body>
@@ -63,6 +78,8 @@
   </body>
 </html>
 ```
+
+<iframe class="stackblitz" src="https://stackblitz.com/edit/stackblitz-starters-ulgym2?embed=1&file=index.html&hideNavigation=1" />
 
 像`h1` `h2` `p` 这些把内容包起来的东西叫 `html 标签`，你可以用不同功能的标签来放置不同类型的内容，`html 标签`有很多，以下是一些常用的标签:
 
