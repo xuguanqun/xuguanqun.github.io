@@ -5,6 +5,23 @@ export default defineConfig({
   title: '前端 xgq',
   description: 'A Blog',
   lang: 'zh-CN',
+  head: [
+    [
+      'script',
+      {
+        async: '',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-T44GZGJWXV',
+      },
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T44GZGJWXV');`,
+    ],
+  ],
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
