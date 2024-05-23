@@ -6,6 +6,7 @@ export default defineConfig({
   description: 'A Blog',
   lang: 'zh-CN',
   head: [
+    ['link', { rel: 'icon', href: '../public/favicon.ico' }],
     [
       'script',
       {
