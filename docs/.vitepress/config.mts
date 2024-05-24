@@ -34,7 +34,7 @@ export default defineConfig({
         {
           text: '前端自学指南',
           items: [
-            { text: '介绍', link: '/self-study/index.md' },
+            { text: '介绍', link: '/self-study/intrduce.md' },
             { text: 'HTML', link: '/self-study/html.md' },
             { text: 'CSS', link: '/self-study/css.md' },
           ],
