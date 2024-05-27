@@ -38,6 +38,11 @@
     border-color: buttonborder;
     border-image: initial;
 }
+.stackblitz {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #ccc;
+}
 </style>
 
 # CSS
@@ -240,6 +245,10 @@
 
 其实就是把 `style` 中的 css 样式放到一个单独的 css 文件中，然后通过 `link` 标签引入到 html 文件中。
 
+```html
+<link rel="stylesheet" href="./style.css" />
+```
+
 - style.css
 
 ```css
@@ -270,3 +279,7 @@
   </body>
 </html>
 ```
+
+**代码示例**
+
+<iframe class="stackblitz" src="https://stackblitz.com/edit/stackblitz-starters-9ryxiz?embed=1&file=index.html&hideNavigation=1" />

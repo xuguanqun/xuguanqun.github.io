@@ -26,17 +26,59 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '前端自学指南', link: '/self-study/index.md' },
+      { text: '前端解决方案', link: '/solution/download' },
+      { text: '前端自学指南', link: '/self-study/intrduce' },
     ],
     sidebar: {
+      // 前端解决方案
+      '/solution/': [
+        {
+          text: '前端解决方案',
+          items: [
+            { text: '下载', link: '/solution/download' },
+            { text: '截图', link: '/solution/screenshot' },
+            { text: 'PDF', link: '/solution/pdf/' },
+            {
+              text: '压缩/解压缩',
+              link: '/solution/compress/',
+              items: [
+                {
+                  text: 'jszip',
+                },
+                { text: 'pako' },
+              ],
+            },
+            {
+              text: 'Office Word',
+              link: '/solution/word/',
+              items: [
+                {
+                  text: 'Word转成HTML',
+                  items: [{ text: 'mammoth' }, { text: 'jszip' }],
+                },
+                {
+                  text: '生成Word文档',
+                  items: [{ text: 'docx' }, { text: 'html-docx-js' }],
+                },
+              ],
+            },
+            {
+              text: 'Office Excel',
+            },
+            {
+              text: 'Office PowerPoint',
+            },
+          ],
+        },
+      ],
       // 前端自学指南
       '/self-study/': [
         {
           text: '前端自学指南',
           items: [
-            { text: '介绍', link: '/self-study/intrduce.md' },
-            { text: 'HTML', link: '/self-study/html.md' },
-            { text: 'CSS', link: '/self-study/css.md' },
+            { text: '介绍', link: '/self-study/intrduce' },
+            { text: 'HTML', link: '/self-study/html' },
+            { text: 'CSS', link: '/self-study/css' },
           ],
         },
       ],
