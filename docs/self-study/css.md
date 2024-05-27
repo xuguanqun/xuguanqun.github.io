@@ -249,22 +249,9 @@
 <link rel="stylesheet" href="./style.css" />
 ```
 
-- style.css
+::: code-group
 
-```css
-.p1 {
-  color: green;
-  background-color: black;
-}
-.p2 {
-  color: blue;
-  background-color: black;
-}
-```
-
-- index.html
-
-```html
+```html [index.html]
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -279,6 +266,19 @@
   </body>
 </html>
 ```
+
+```css [style.css]
+.p1 {
+  color: green;
+  background-color: black;
+}
+.p2 {
+  color: blue;
+  background-color: black;
+}
+```
+
+:::
 
 **代码示例**
 

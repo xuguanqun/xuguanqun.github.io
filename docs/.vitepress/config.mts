@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress';
 
-// https://vitepress.dev/zh/guide/what-is-vitepress
 export default defineConfig({
   title: '前端 xgq',
-  description: 'A Blog',
+  description:
+    '前端 xgq，前端自学指南：更简单的自学方式、前端解决方案，前端面试经验，HTML、CSS、JavaScript、React、Vue、Svelte、Bootstrap、Tailwind CSS、Webpack、Vite、Word、Excel、PowerPoint',
   lang: 'zh-CN',
   head: [
     ['link', { rel: 'icon', href: '../public/favicon.ico' }],
@@ -24,6 +24,7 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
+    logo: '../public/images/avatar.jpg',
     nav: [
       { text: '主页', link: '/' },
       { text: '前端解决方案', link: '/solution/download' },
