@@ -44,8 +44,6 @@ window.open('http://xxx.pdf');
 
 ### `jspdf`
 
-> [jspdf 官方文档](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html)
-
 ::: code-group
 
 ```bash [npm]
@@ -68,9 +66,22 @@ bun add jspdf
 **生成一个 PDF 文件并下载**
 
 ```ts
-const doc = new jspdf('p', 'pt', 'a4');
-doc.text('Hello 1111', 10, 10);
-doc.addPage('a4', 'l');
-doc.text('Hello 2222', 10, 10);
-doc.save('example.pdf');
+const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+doc.text('Hello 1111', 10, 10); // 添加文字 10,10 是坐标
+doc.addPage('a4', 'l'); // 添加页面
+doc.text('Hello 2222', 10, 10); // 添加文字
+doc.addImage(
+  'https://imgproc.airliners.net/photos/airliners/7/0/0/1184007.jpg?v=v40',
+  'JPEG',
+  10,
+  10,
+  200,
+  100
+);
+doc.save('example.pdf'); // 下载pdf
 ```
+
+详细使用说明参考文档
+
+- [jspdf 文档 1](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html)
+- [jspdf 文档 2](https://parallax.github.io/jsPDF/docs/index.html)
