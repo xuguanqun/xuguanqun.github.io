@@ -42,26 +42,10 @@ export default defineConfig({
             {
               text: '压缩/解压缩',
               link: '/solution/compress/',
-              items: [
-                {
-                  text: 'jszip',
-                },
-                { text: 'pako' },
-              ],
             },
             {
               text: 'Office Word',
               link: '/solution/word/',
-              items: [
-                {
-                  text: 'Word转成HTML',
-                  items: [{ text: 'mammoth' }, { text: 'jszip' }],
-                },
-                {
-                  text: '生成Word文档',
-                  items: [{ text: 'docx' }, { text: 'html-docx-js' }],
-                },
-              ],
             },
             {
               text: 'Office Excel',

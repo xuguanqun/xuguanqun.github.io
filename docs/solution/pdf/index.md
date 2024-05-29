@@ -10,7 +10,23 @@
 
 前端关于 PDF 的需求，一般分几种情况：
 
-## 1. 已经有了 PDF 文件，只是在页面上做个展示
+1. 已经有了 PDF 文件，只是在页面上做个展示
+
+[直接展示 PDF 文件](#t1)
+
+2. 已经有了 PDF 文件，但不仅要在网页上进行展示，还需要二次编辑，比如说在原本的 PDF 上添加文字、图片、甚至盖个章等等
+
+[通过 PDF.js 实现](#t2)
+
+3. 没有 PDF 文件，需要前端动态生成 PDF 文件
+
+[通过 jspdf 实现](#t3)
+
+4. 没有 PDF 文件，需要前端把某个页面转换成 PDF 文件
+
+[通过 html2canvas + jspdf 实现](#t4)
+
+## 直接展示{#t1}
 
 不论是用户上传的，还是后端生成的，即文件已经存在于服务器上，有文件地址：`http://xxx.pdf`，通常这种情况，浏览器可以直接对其进行展示。
 
@@ -32,17 +48,11 @@ window.open('http://xxx.pdf');
 
 <iframe class="pdf-iframe" src="https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf" />
 
-## 2. 已经有了 PDF 文件，但不仅要在网页上进行展示，还需要二次编辑，比如说在原本的 PDF 上添加文字、图片、甚至盖个章等等
+## PDF.js{#t2}
 
-**这种情况你需要一个 js 库来帮你完成：**
+## jspdf{#t3}
 
-### `PDF.js`
-
-## 3. 没有 PDF 文件，需要前端动态生成 PDF 文件
-
-**推荐 js 库：**
-
-### `jspdf`
+> 前端生成 PDF 文件
 
 ::: code-group
 
@@ -63,6 +73,7 @@ bun add jspdf
 ```
 
 :::
+
 **生成一个 PDF 文件并下载**
 
 ```ts
@@ -90,11 +101,11 @@ doc.save('example.pdf'); // 下载pdf
 
 如果 pdf 内容有中文，那就会乱码，需要设置中文字体，具体操作如下：
 
-#### 1. 首先下载字体
+1.  首先下载字体
 
 [下载思源字体](https://github.com/Pal3love/Source-Han-TrueType/releases/download/2.004-2.002-1.002-R/SourceHanSansCN.zip)
 
-#### 2. 把 ttf 字体文件转换成 js 或 ts 文件
+2.  把 ttf 字体文件转换成 js 或 ts 文件
 
 [在线转换网址](https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html)
 
@@ -129,12 +140,12 @@ doc.addImage(
 doc.save('example.pdf'); // 下载pdf
 ```
 
-## 4. 没有 PDF 文件，需要前端把某个页面转换成 PDF 文件
+## html2canvas + jspdf{#t4}
+
+> 前端把某个页面转换成 PDF 文件
 
 这其实思路就是截图，然后把图片放进 pdf，最后下载。
-可以看前几篇文章了解：
-
-- [截图](../screenshot)
+可以看这篇文章：[截图](../screenshot)
 
 **代码示例**
 
