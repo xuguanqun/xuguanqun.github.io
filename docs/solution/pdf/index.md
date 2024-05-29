@@ -110,7 +110,9 @@ doc.save('example.pdf'); // 下载pdf
 
 ```ts
 import './SourceHanSansCN-Normal-normal.ts'; // [!code focus] // 能引用到就行
+```
 
+```ts
 const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
 doc.setFont('SourceHanSansCN-Normal'); // [!code focus] // 这里填的是刚刚的fontName
 doc.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
