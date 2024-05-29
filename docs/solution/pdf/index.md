@@ -67,17 +67,17 @@ bun add jspdf
 
 ```ts
 const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
-doc.text('Hello 1111', 10, 10); // 添加文字 10,10 是坐标
+doc.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
 doc.addPage('a4', 'l'); // 添加页面
-doc.text('Hello 2222', 10, 10); // 添加文字
+doc.text('第二页内容', 20, 20); // 添加文字
 doc.addImage(
-  'https://imgproc.airliners.net/photos/airliners/7/0/0/1184007.jpg?v=v40',
+  'https://avatars.githubusercontent.com/u/33191843',
   'JPEG',
-  10,
-  10,
+  20,
+  30,
   200,
-  100
-);
+  200
+); // 添加图片
 doc.save('example.pdf'); // 下载pdf
 ```
 
@@ -85,3 +85,63 @@ doc.save('example.pdf'); // 下载pdf
 
 - [jspdf 文档 1](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html)
 - [jspdf 文档 2](https://parallax.github.io/jsPDF/docs/index.html)
+
+### jspdf 中文乱码问题
+
+如果 pdf 内容有中文，那就会乱码，需要设置中文字体，具体操作如下：
+
+#### 1. 首先下载字体
+
+[下载思源字体](https://github.com/Pal3love/Source-Han-TrueType/releases/download/2.004-2.002-1.002-R/SourceHanSansCN.zip)
+
+#### 2. 把 ttf 字体文件转换成 js 或 ts 文件
+
+[在线转换网址](https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html)
+
+![](../../public/images/20240529113307.jpg)
+
+这里用 normal 字体举例，点击 Create 转换，完成后，fontName 会显示一个字体名，你需要复制它，等会会用到
+
+然后会自动下载一个 js 文件，如果你是 typescript 项目，需要把 js 后缀改成 ts。
+
+在我给的例子里，转换后的 fontName 是`SourceHanSansCN-Normal`，下载的文件名是`SourceHanSansCN-Normal-normal.js`，因为我是 typescript 项目，所以我把文件名改成了`SourceHanSansCN-Normal-normal.ts`
+
+把这个 ts 文件放进项目里，修改代码：
+
+```ts
+import './SourceHanSansCN-Normal-normal.ts'; // [!code focus] // 能引用到就行
+
+const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+doc.setFont('SourceHanSansCN-Normal'); // [!code focus] // 这里填的是刚刚的fontName
+doc.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
+doc.addPage('a4', 'l'); // 添加页面
+doc.text('第二页内容', 20, 20); // 添加文字
+doc.addImage(
+  'https://avatars.githubusercontent.com/u/33191843',
+  'JPEG',
+  20,
+  30,
+  200,
+  200
+); // 添加图片
+doc.save('example.pdf'); // 下载pdf
+```
+
+## 4. 没有 PDF 文件，需要前端把某个页面转换成 PDF 文件
+
+这其实思路就是截图，然后把图片放进 pdf，最后下载。
+可以看前几篇文章了解：
+
+- [截图](../screenshot)
+
+**代码示例**
+
+```ts
+const div = document.getElementById('screenshot');
+html2canvas(div).then(function (canvas) {
+  const dataURL = canvas.toDataURL('image/png', 1);
+  const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+  doc.addImage(dataURL, 'JPEG', 20, 30, 200, 200); // 添加图片
+  doc.save('example.pdf'); // 下载pdf
+});
+```
