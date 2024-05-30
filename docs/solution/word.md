@@ -164,3 +164,60 @@ saveAs(blob, 'download.docx');
 <iframe class="stackblitz" src="https://stackblitz.com/edit/vitejs-vite-adh4as?embed=1&file=src%2Fmain.tsx&hideNavigation=1" />
 
 ## html-docx-js{#t4}
+
+::: code-group
+
+```bash [npm]
+npm install html-docx-js
+```
+
+```bash [pnpm]
+pnpm install html-docx-js
+```
+
+```bash [yarn]
+yarn add html-docx-js
+```
+
+```bash [bun]
+bun add html-docx-js
+```
+
+:::
+
+```ts
+import * as htmlDocx from 'html-docx-js/dist/html-docx';
+```
+
+```ts
+const html = `
+<html>
+<body>内容</body>
+</html>
+`;
+const converted = await htmlDocx.asBlob(html, {
+  orientation: 'portrait',
+  margins: {
+    top: 500,
+    left: 500,
+    right: 500,
+    bottom: 500,
+  },
+});
+saveAs(converted, 'download.docx');
+```
+
+### 不支持严格模式
+
+比如你在 vite 中使用`html-docx-js`
+::: danger 报错
+with(obj){}...
+:::
+
+主要是因为这个 js 库太老了，写法不支持严格模式，所以需要修改源码，将`with`用法替换掉。
+
+可以直接看下方的代码示例，里面的`html-docx-js`是修改过源码后的。
+
+**代码示例**
+
+<iframe class="stackblitz" src="https://stackblitz.com/edit/vitejs-vite-vvkayg?embed=1&file=src%2Fmain.tsx&hideNavigation=1" />
