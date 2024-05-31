@@ -1,7 +1,11 @@
 import DefaultTheme from 'vitepress/theme';
-import Customayout from './custom-layout.vue';
+import CustomLayout from './custom-layout.vue';
+import CustomHome from './custom-home.vue';
 
 export default {
   extends: DefaultTheme,
-  Layout: Customayout,
+  Layout: CustomLayout,
+  enhanceApp({ app }) {
+    app.component('custom-home', CustomHome);
+  },
 };

@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress';
+import configSidebarSolution from './config-sidebar-solution';
+import configSidebarSelfStudy from './config-sidebar-self-study';
+import configSidebarPosts from './config-sidebar-posts';
 
 export default defineConfig({
   title: '前端 xgq',
@@ -31,52 +34,22 @@ export default defineConfig({
     },
     nav: [
       { text: '主页', link: '/' },
-      { text: '前端解决方案', link: '/solution/download' },
-      { text: '前端自学指南', link: '/self-study/intrduce' },
+      { text: '文章', link: '/posts/*' },
+      { text: '前端解决方案', link: '/solution/*' },
+      { text: '前端自学指南', link: '/self-study/*' },
     ],
     sidebar: {
+      // 文章
+      '/posts/': configSidebarPosts,
       // 前端解决方案
-      '/solution/': [
-        {
-          text: '前端解决方案',
-          items: [
-            { text: '下载', link: '/solution/download' },
-            { text: '截图', link: '/solution/screenshot' },
-            { text: 'PDF', link: '/solution/pdf' },
-            {
-              text: '压缩/解压缩',
-              link: '/solution/compress',
-            },
-            {
-              text: 'Office Word',
-              link: '/solution/word',
-            },
-            {
-              text: 'Office Excel',
-              link: '/solution/excel',
-            },
-            {
-              text: 'Office PowerPoint',
-              link: '/solution/ppt',
-            },
-          ],
-        },
-      ],
+      '/solution/': configSidebarSolution,
       // 前端自学指南
-      '/self-study/': [
-        {
-          text: '前端自学指南',
-          items: [
-            { text: '介绍', link: '/self-study/intrduce' },
-            { text: 'HTML', link: '/self-study/html' },
-            { text: 'CSS', link: '/self-study/css' },
-          ],
-        },
-      ],
+      '/self-study/': configSidebarSelfStudy,
     },
     socialLinks: [{ icon: 'github', link: 'https://github.com/xuguanqun' }],
     footer: {
-      message: 'Released under the MIT License.',
+      message:
+        '项目开发需求、技术交流群、新手指南群、个人咨询，微信：flechazo150503',
       copyright: 'Copyright © 2024',
     },
   },
