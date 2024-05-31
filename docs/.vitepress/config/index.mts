@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 import configSidebarSolution from './config-sidebar-solution';
 import configSidebarSelfStudy from './config-sidebar-self-study';
 import configSidebarPosts from './config-sidebar-posts';
+import zh from './zh';
 
 export default defineConfig({
   title: '前端 xgq',
@@ -28,15 +29,21 @@ export default defineConfig({
   ],
   cleanUrls: true,
   themeConfig: {
+    ...(zh as any),
     logo: '../public/images/avatar.jpg',
-    search: {
-      provider: 'local',
-    },
     nav: [
       { text: '主页', link: '/' },
       { text: '文章', link: '/posts/*' },
-      { text: '前端解决方案', link: '/solution/*' },
-      { text: '前端自学指南', link: '/self-study/*' },
+      {
+        text: '前端解决方案',
+        link: '/solution/download',
+        activeMatch: '/solution/',
+      },
+      {
+        text: '前端自学指南',
+        link: '/self-study/intrduce',
+        activeMatch: '/self-study/',
+      },
     ],
     sidebar: {
       // 文章
