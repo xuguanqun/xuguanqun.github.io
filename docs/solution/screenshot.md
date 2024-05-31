@@ -8,13 +8,7 @@
 
 # 截图
 
-## html2canvas
-
-`html2canvas` 是一个流行的 JavaScript 库，用于将 HTML 元素转换为 Canvas。这个库的主要功能是将网页中的 DOM 元素渲染到 Canvas 上，从而实现网页截图、实时预览等功能。
-
-使用 `html2canvas` 可以很容易地将整个页面或特定的 HTML 元素转换为 Canvas，这允许你在客户端进行更多的图形操作，比如保存为图片、添加滤镜等。这对于实现网页截图、生成报告、分享网页内容等非常有用。
-
-### 安装
+推荐：`html2canvas`
 
 ::: code-group
 
