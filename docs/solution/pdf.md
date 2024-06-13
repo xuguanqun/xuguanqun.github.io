@@ -145,7 +145,7 @@ doc.save('example.pdf'); // 下载pdf
 > 前端把某个页面转换成 PDF 文件
 
 这其实思路就是截图，然后把图片放进 pdf，最后下载。
-可以看这篇文章：[截图](../screenshot)
+可以看这篇文章：[截图](./screenshot)
 
 **代码示例**
 
