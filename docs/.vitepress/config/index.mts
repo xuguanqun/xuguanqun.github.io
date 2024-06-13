@@ -10,7 +10,7 @@ export default defineConfig({
     '前端 xgq，前端自学指南：更简单的自学方式、前端解决方案，前端面试经验，HTML、CSS、JavaScript、React、Vue、Svelte、Bootstrap、Tailwind CSS、Webpack、Vite、Word、Excel、PowerPoint',
   lang: 'zh-CN',
   head: [
-    ['link', { rel: 'icon', href: '../public/favicon.ico' }],
+    ['link', { rel: 'icon', href: '../../public/favicon.ico' }],
     [
       'script',
       {
