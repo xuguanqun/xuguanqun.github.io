@@ -129,7 +129,7 @@ bun add docxtemplater pizzip
 
 **首先需要一个 docx 文件作为模板：`xgq.docx`**
 
-![xgq.docx](../../public/images/20240529171535.jpg)
+![xgq.docx](../public/images/20240529171535.jpg)
 
 `{}`语法代表变量
 

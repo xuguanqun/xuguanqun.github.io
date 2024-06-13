@@ -109,7 +109,7 @@ doc.save('example.pdf'); // 下载pdf
 
 [在线转换网址](https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html)
 
-![](../../public/images/20240529113307.jpg)
+![](../public/images/20240529113307.jpg)
 
 这里用 normal 字体举例，点击 Create 转换，完成后，fontName 会显示一个字体名，你需要复制它，等会会用到
 
