@@ -33,7 +33,6 @@ export default defineConfig({
     logo: '../public/images/avatar.jpg',
     nav: [
       { text: '主页', link: '/' },
-      { text: '文章', link: '/posts/*' },
       {
         text: '前端解决方案',
         link: '/solution/download',

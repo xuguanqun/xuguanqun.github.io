@@ -10,5 +10,37 @@ console.log('posts', posts);
 </script>
 
 <template>
-  <div class="custom-home">customhome</div>
+  <div class="custom-home">
+    <div class="custom-home-left">
+      <div class="user">user</div>
+    </div>
+    <div class="custom-home-right">
+      <div class="posts">
+        <div class="post">post1</div>
+        <div class="post">post2</div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<style lang="less">
+.custom-home {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  width: 100vw;
+  > .custom-home-left {
+    width: 30%;
+    > .user {
+      padding: 10px;
+      background-color: var(--vp-c-bg-soft);
+    }
+  }
+  > .custom-home-right {
+    width: 40%;
+    > .posts {
+      padding: 10px;
+    }
+  }
+}
+</style>

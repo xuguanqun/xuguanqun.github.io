@@ -15,6 +15,7 @@
     "vitepress": "^1.2.2"
   },
   "dependencies": {
+    "less": "^4.2.0",
     "qrcode": "^1.5.3"
   }
 }
