@@ -77,11 +77,11 @@ bun add jspdf
 **生成一个 PDF 文件并下载**
 
 ```ts
-const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
-doc.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
-doc.addPage('a4', 'l'); // 添加页面
-doc.text('第二页内容', 20, 20); // 添加文字
-doc.addImage(
+const pdf = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+pdf.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
+pdf.addPage('a4', 'l'); // 添加页面
+pdf.text('第二页内容', 20, 20); // 添加文字
+pdf.addImage(
   'https://avatars.githubusercontent.com/u/33191843',
   'JPEG',
   20,
@@ -89,13 +89,32 @@ doc.addImage(
   200,
   200
 ); // 添加图片
-doc.save('example.pdf'); // 下载pdf
+pdf.save('example.pdf'); // 下载pdf
 ```
 
 详细使用说明参考文档
 
 - [jspdf 文档 1](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html)
 - [jspdf 文档 2](https://parallax.github.io/jsPDF/docs/index.html)
+
+### 对实时生成的 PDF 直接进行预览
+
+```ts
+const pdfBlob = pdf.output('blob');
+const pdfUrl = URL.createObjectURL(pdfBlob);
+```
+
+#### 用 iframe 预览
+
+```tsx
+<iframe src={pdfUrl} />
+```
+
+#### 打开新窗口预览
+
+```ts
+window.open(pdfUrl);
+```
 
 ### jspdf 中文乱码问题
 
@@ -124,12 +143,12 @@ import './SourceHanSansCN-Normal-normal.ts'; // [!code focus] // 能引用到就
 ```
 
 ```ts
-const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
-doc.setFont('SourceHanSansCN-Normal'); // [!code focus] // 这里填的是刚刚的fontName
-doc.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
-doc.addPage('a4', 'l'); // 添加页面
-doc.text('第二页内容', 20, 20); // 添加文字
-doc.addImage(
+const pdf = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+pdf.setFont('SourceHanSansCN-Normal'); // [!code focus] // 这里填的是刚刚的fontName
+pdf.text('第一页内容', 20, 20); // 添加文字 20,20 是坐标
+pdf.addPage('a4', 'l'); // 添加页面
+pdf.text('第二页内容', 20, 20); // 添加文字
+pdf.addImage(
   'https://avatars.githubusercontent.com/u/33191843',
   'JPEG',
   20,
@@ -137,7 +156,7 @@ doc.addImage(
   200,
   200
 ); // 添加图片
-doc.save('example.pdf'); // 下载pdf
+pdf.save('example.pdf'); // 下载pdf
 ```
 
 ## html2canvas + jspdf{#t4}
@@ -153,8 +172,8 @@ doc.save('example.pdf'); // 下载pdf
 const div = document.getElementById('screenshot');
 html2canvas(div).then(function (canvas) {
   const dataURL = canvas.toDataURL('image/png', 1);
-  const doc = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
-  doc.addImage(dataURL, 'JPEG', 20, 30, 200, 200); // 添加图片
-  doc.save('example.pdf'); // 下载pdf
+  const pdf = new jspdf('p', 'pt', 'a4'); // 首先初始化一个pdf文档
+  pdf.addImage(dataURL, 'JPEG', 20, 30, 200, 200); // 添加图片
+  pdf.save('example.pdf'); // 下载pdf
 });
 ```
