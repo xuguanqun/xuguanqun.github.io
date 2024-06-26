@@ -52,6 +52,7 @@ export default defineConfig({
       // 前端自学指南
       '/self-study/': configSidebarSelfStudy,
     },
+    outline: [2, 3, 4, 5],
     socialLinks: [{ icon: 'github', link: 'https://github.com/xuguanqun' }],
     footer: {
       message:
