@@ -1,12 +1,5 @@
 <script setup>
-import { useData } from 'vitepress';
-import { toRaw } from 'vue';
-const { site } = useData();
-const { themeConfig } = site.getter() || {};
-const { sidebar } = themeConfig || {};
-const postsToRaw = toRaw(sidebar['/posts/'] || {});
-const posts = postsToRaw?.[0]?.items || [];
-console.log('posts', posts);
+import { data as posts } from '../../posts/list.data.ts';
 </script>
 
 <template>
@@ -14,13 +7,7 @@ console.log('posts', posts);
     <div class="custom-home-left">
       <div class="user">
         <img src="../../public/images/avatar.jpg" alt="Avatar" class="avatar" />
-        <h2>Jonathan Doe</h2>
-        <p>Canada</p>
-        <p>
-          Hello! My name is Jonathan Doe! Actively writing articles for this
-          website. I really like tutorials and illustrations, so stay alert for
-          my next tutorials.
-        </p>
+        <p>desc</p>
       </div>
       <div class="tag-cloud">
         <h3>Tag Cloud</h3>
@@ -33,46 +20,16 @@ console.log('posts', posts);
           <li>Travel</li>
         </ul>
       </div>
-      <div class="latest-articles">
-        <h3>Latest Articles</h3>
-        <div class="latest-article">
-          <!-- <img src="path/to/article-image.jpg" alt="Article Image" /> -->
-          <p>Far far away, behind the word mountains</p>
-          <span>Mar 19, 2023</span>
-        </div>
-      </div>
     </div>
     <div class="custom-home-right">
       <div class="posts">
-        <div class="post">
+        <div class="post" v-for="(post, index) in posts" :key="index">
           <!-- <img src="path/to/image1.jpg" alt="Post Image" class="post-image" /> -->
           <div class="post-content">
-            <h2>Far far away, behind the word mountains</h2>
-            <p>
-              Hey there, welcome to your new home on the web! Unlike social
-              networks, this one is all yours. Publish your...
-            </p>
+            <h2>{{ post.frontmatter.title }}</h2>
+            <p>{{ post.frontmatter.description }}</p>
             <div class="post-meta">
-              <span>Mar 19, 2023</span>
-              <span>2 min read</span>
-              <span>Rating: ★★★</span>
-              <span>Jonathan Doe</span>
-            </div>
-          </div>
-        </div>
-        <div class="post">
-          <!-- <img src="path/to/image2.jpg" alt="Post Image" class="post-image" /> -->
-          <div class="post-content">
-            <h2>Building your audience with subscriber signups</h2>
-            <p>
-              How Ghost allows you to turn anonymous readers into an audience of
-              active subscribers, so you know what's working and what isn't...
-            </p>
-            <div class="post-meta">
-              <span>Jul 25, 2022</span>
-              <span>3 min read</span>
-              <span>Rating: ★★★★</span>
-              <span>Jonathan Doe</span>
+              <span>{{ post.date }}</span>
             </div>
           </div>
         </div>

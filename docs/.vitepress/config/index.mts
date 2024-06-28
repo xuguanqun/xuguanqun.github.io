@@ -1,7 +1,6 @@
 import { defineConfig } from 'vitepress';
 import configSidebarSolution from './config-sidebar-solution';
 import configSidebarSelfStudy from './config-sidebar-self-study';
-import configSidebarPosts from './config-sidebar-posts';
 import zh from './zh';
 
 export default defineConfig({
@@ -45,8 +44,6 @@ export default defineConfig({
       },
     ],
     sidebar: {
-      // 文章
-      '/posts/': configSidebarPosts,
       // 前端解决方案
       '/solution/': configSidebarSolution,
       // 前端自学指南
