@@ -37,11 +37,11 @@ export default defineConfig({
         link: '/solution/download',
         activeMatch: '/solution/',
       },
-      {
-        text: '前端自学指南',
-        link: '/self-study/intrduce',
-        activeMatch: '/self-study/',
-      },
+      // {
+      //   text: '前端自学指南',
+      //   link: '/self-study/intrduce',
+      //   activeMatch: '/self-study/',
+      // },
     ],
     sidebar: {
       // 前端解决方案

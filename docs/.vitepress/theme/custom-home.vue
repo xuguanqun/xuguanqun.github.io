@@ -6,10 +6,13 @@ import { data as posts } from '../../posts/list.data.ts';
   <div class="custom-home">
     <div class="custom-home-left">
       <div class="user">
-        <img src="../../public/images/avatar.jpg" alt="Avatar" class="avatar" />
-        <p>desc</p>
+        <img class="avatar" src="../../public/images/avatar.jpg" alt="Avatar" />
+        <div class="content">
+          <div class="name">xgq</div>
+          <div class="desc">desc</div>
+        </div>
       </div>
-      <div class="tag-cloud">
+      <!-- <div class="tag-cloud">
         <h3>Tag Cloud</h3>
         <ul>
           <li>Inspiration</li>
@@ -19,7 +22,7 @@ import { data as posts } from '../../posts/list.data.ts';
           <li>Technology</li>
           <li>Travel</li>
         </ul>
-      </div>
+      </div> -->
     </div>
     <div class="custom-home-right">
       <div class="posts">
@@ -52,12 +55,23 @@ import { data as posts } from '../../posts/list.data.ts';
       padding: 20px;
       background-color: var(--vp-c-bg-soft);
       border-radius: 8px;
-      text-align: center;
-      .avatar {
+      display: flex;
+      gap: 20px;
+      > .avatar {
         width: 80px;
         height: 80px;
         border-radius: 50%;
         margin-bottom: 10px;
+      }
+      > .content {
+        > .name {
+          font-size: 20px;
+          font-weight: 600;
+        }
+        > .desc {
+          margin-top: 10px;
+          font-size: 14px;
+        }
       }
       h2 {
         margin: 10px 0;
